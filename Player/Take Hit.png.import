@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/IMG_0121.PNG-b334e5818ad1c15196c1865f8c372fb3.stex"
+path="res://.import/Take Hit.png-373daa82d3cc8152e0f6b29bdece589c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/IMG_0121.PNG"
-dest_files=[ "res://.import/IMG_0121.PNG-b334e5818ad1c15196c1865f8c372fb3.stex" ]
+source_file="res://Player/Take Hit.png"
+dest_files=[ "res://.import/Take Hit.png-373daa82d3cc8152e0f6b29bdece589c.stex" ]
 
 [params]
 

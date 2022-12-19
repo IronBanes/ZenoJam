@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/IMG_0121.PNG-b334e5818ad1c15196c1865f8c372fb3.stex"
+path="res://.import/Jump.png-d1634cbd623509c9c9732b0f63ac85bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/IMG_0121.PNG"
-dest_files=[ "res://.import/IMG_0121.PNG-b334e5818ad1c15196c1865f8c372fb3.stex" ]
+source_file="res://Player/Jump.png"
+dest_files=[ "res://.import/Jump.png-d1634cbd623509c9c9732b0f63ac85bc.stex" ]
 
 [params]
 

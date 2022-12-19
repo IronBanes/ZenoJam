@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/IMG_0121.PNG-b334e5818ad1c15196c1865f8c372fb3.stex"
+path="res://.import/Background.png-cc6e28155d94dd51e8ae9263b12aa578.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/IMG_0121.PNG"
-dest_files=[ "res://.import/IMG_0121.PNG-b334e5818ad1c15196c1865f8c372fb3.stex" ]
+source_file="res://Backgrounds/Background.png"
+dest_files=[ "res://.import/Background.png-cc6e28155d94dd51e8ae9263b12aa578.stex" ]
 
 [params]
 
