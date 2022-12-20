@@ -1,11 +1,13 @@
 class_name Player
 extends Actor
 
-const Jump_speed = 40
-const GRAVITY = 100.0
+
+const MAXFALLSPEED = 200
+const MAXSPEED = 80
+const JUMPFORCE = 300
+const GRAVITY = 
 
 var state_machine
-var run_speed = 80
 var attacks = ["Sword Slash","Sword Slash Down"]
 var is_on_floor = 0
 var velocity = Vector2.ZERO
@@ -16,93 +18,189 @@ func _ready():
 	
 
 	
+#region 
+#func get_input():
+#
+#	var current = state_machine.get_current_node()
+#	velocity = Vector2.ZERO
+#
+#	if Input.is_action_just_pressed("Light Attack") && (current == "idle-2" || current == "walk 2"):
+#		state_machine.travel("Sword Slash")
+#		return
+#
+#	if Input.is_action_just_pressed("Light Attack") && current == "idle":
+#		state_machine.travel("punch")
+#		return
+#
+#	if Input.is_action_just_pressed("Light Attack") && current == "walk":
+#		state_machine.travel("run-punch")
+#		return
+#
+#	if Input.is_action_just_pressed("Heavy Attack") && (current == "idle-2" || current == "walk 2"):
+#		state_machine.travel("Sword Slash Down")
+#		return
+#
+#	if Input.is_action_just_pressed("Heavy Attack") && current == "idle":
+#		state_machine.travel("kick")
+#		return
+#
+#	if Input.is_action_just_pressed("Draw Sword Sheathe Sword"):
+#
+#		if sworddrawn:
+#			state_machine.travel("Sword Away")
+#			sworddrawn = false
+#			$AnimationTree["parameters/conditions/swordisdrawn"] = false
+#
+#		elif !sworddrawn:
+#			state_machine.travel("Sword Draw")
+#			sworddrawn = true
+#			$AnimationTree["parameters/conditions/swordisdrawn"] = true
+#
+#	print(sworddrawn)
+#	if Input.is_action_pressed("move_right"):
+#
+#		if current == "idle-2":
+#			state_machine.travel("walk 2")
+#
+#		if current == "idle":
+#			state_machine.travel("walk")
+#
+#		velocity.x += 1
+#		$Sprite.scale.x = 1
+#
+#	if Input.is_action_pressed("move_left"):
+#
+#		if current == "idle-2":
+#			state_machine.travel("walk 2")
+#
+#		if current == "idle":
+#			state_machine.travel("walk")
+#
+#		velocity.x -= 1
+#		$Sprite.scale.x = -1
+#
+#	if Input.is_action_just_pressed("jump"):
+#		state_machine.travel("jump")
+#		velocity.y = -Jump_speed
+#
+#		return
+#
+#	#velocity = velocity.normalized() * run_speed
+#
+#	if velocity.length() != 0 && sworddrawn:
+#		state_machine.travel("walk 2")
+#
+#	elif velocity.length() != 0 && not sworddrawn:
+#		state_machine.travel("walk")
+#
+#	if velocity.length() == 0 && sworddrawn:
+#		state_machine.travel("idle-2")
+#
+#	elif velocity.length() == 0 && not sworddrawn:
+#		state_machine.travel("idle")
+##end region
+func _physics_process(delta):
+	if $RayCast2D.is_colliding():
+		is_on_floor = 1
 
-func get_input():
-	
 	var current = state_machine.get_current_node()
-	velocity = Vector2.ZERO
+
+	velocity.y += _gravity
+	if velocity.y > MAXFALLSPEED:
+		velocity.y = MAXFALLSPEED
+	if velocity.y > 0:
+		state_machine.travel("fall")
 	
-	if Input.is_action_just_pressed("Light Attack") && (current == "idle-2" || current == "walk 2"):
-		state_machine.travel("Sword Slash")
-		return
+	if Input.is_action_just_pressed("Light Attack"):
+		if (current == "idle-2" || current == "walk 2"):
+			state_machine.travel(attacks[randi()%2])
+			return
+		elif current == "idle":
+			state_machine.travel("punch")
+			return
+		elif current == "walk":
+			state_machine.travel("run-punch")
+			return
 	
-	if Input.is_action_just_pressed("Light Attack") && current == "idle":
-		state_machine.travel("punch")
-		return
-	
-	if Input.is_action_just_pressed("Light Attack") && current == "walk":
-		state_machine.travel("run-punch")
-		return
-		
-	if Input.is_action_just_pressed("Heavy Attack") && (current == "idle-2" || current == "walk 2"):
-		state_machine.travel("Sword Slash Down")
-		return
-		
-	if Input.is_action_just_pressed("Heavy Attack") && current == "idle":
-		state_machine.travel("kick")
-		return
+	if Input.is_action_just_pressed("Heavy Attack"):
+		if (current == "idle-2" || current == "walk 2"):
+			state_machine.travel("attack1")
+			return
+		elif current == "idle":
+			state_machine.travel("kick")
+			return
 		
 	if Input.is_action_just_pressed("Draw Sword Sheathe Sword"):
 		
 		if sworddrawn:
-			state_machine.travel("Sword Away")
+			state_machine.travel("idle")
 			sworddrawn = false
-			$AnimationTree["parameters/conditions/swordisdrawn"] = false
+			#$AnimationTree["parameters/conditions/swordisdrawn"] = false
 		
 		elif !sworddrawn:
-			state_machine.travel("Sword Draw")
+			state_machine.travel("idle-2")
 			sworddrawn = true
-			$AnimationTree["parameters/conditions/swordisdrawn"] = true
-			
-	print(sworddrawn)
+			#$AnimationTree["parameters/conditions/swordisdrawn"] = true
+	
 	if Input.is_action_pressed("move_right"):
 	
-		if current == "idle-2":
+		if sworddrawn:
 			state_machine.travel("walk 2")
 	
-		if current == "idle":
+		if not sworddrawn:
 			state_machine.travel("walk")
 	
-		velocity.x += 1
-		$Sprite.scale.x = 1
+		velocity.x = MAXSPEED
 	
-	if Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left"):
 	
-		if current == "idle-2":
+		if sworddrawn:
 			state_machine.travel("walk 2")
 	
-		if current == "idle":
+		if not sworddrawn:
 			state_machine.travel("walk")
 	
-		velocity.x -= 1
-		$Sprite.scale.x = -1
+		velocity.x = -MAXSPEED
 	
-	if Input.is_action_just_pressed("jump"):
-		state_machine.travel("jump")
-		velocity.y = -Jump_speed
-		
-		return
+	else:
+		velocity.x = 0 
+		if sworddrawn:
+			state_machine.travel("idle-2")
+		elif not sworddrawn:
+			state_machine.travel("idle")
 	
-	velocity = velocity.normalized() * run_speed
+	if is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = -JUMPFORCE
+			state_machine.travel("jump")
+			return
 	
-	if velocity.length() != 0 && sworddrawn:
-		state_machine.travel("walk 2")
+
+#	if velocity.length() != 0 && sworddrawn:
+#		state_machine.travel("walk 2")
+#
+#	elif velocity.length() != 0 && not sworddrawn:
+#		state_machine.travel("walk")
+#
+#	if velocity.length() == 0 && sworddrawn:
+#		state_machine.travel("idle-2")
+#
+#	elif velocity.length() == 0 && not sworddrawn:
+#		state_machine.travel("idle")
 	
-	elif velocity.length() != 0 && not sworddrawn:
-		state_machine.travel("walk")
 	
-	if velocity.length() == 0 && sworddrawn:
-		state_machine.travel("idle-2")
 	
-	elif velocity.length() == 0 && not sworddrawn:
-		state_machine.travel("idle")
-		
-func _physics_process(delta):
-#	if $RayCast2D.is_colliding():
-#		is_on_floor = 1
-	velocity.y += delta * GRAVITY
-	get_input()
+	
+	
+	
+	
+	
+	
 	velocity = move_and_slide(velocity)
+
+
+
+
 
 func hurt():
 	state_machine.travel("hurt")

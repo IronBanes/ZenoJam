@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Player/adventurer.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
@@ -7,8 +7,8 @@
 extents = Vector2( 11, 23 )
 
 [sub_resource type="CapsuleShape2D" id=50]
-radius = 11.1073
-height = 29.9987
+radius = 10.0213
+height = 29.9562
 
 [sub_resource type="Animation" id=51]
 length = 0.001
@@ -726,8 +726,8 @@ tracks/11/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=53]
-radius = 10.5213
-height = 4.97117
+radius = 11.1073
+height = 29.9987
 
 [sub_resource type="Animation" id=18]
 length = 0.6
@@ -1826,8 +1826,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id=34]
-length = 0.4
-loop = true
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -1883,15 +1882,15 @@ tracks/4/loop_wrap = false
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 14.0, 15.0, 16.0, 17.0 ]
 }
 
 [sub_resource type="SegmentShape2D" id=52]
-a = Vector2( -9.87058, -18.0713 )
-b = Vector2( 7.99979, 0.0574055 )
+a = Vector2( -7.9107, -17.9839 )
+b = Vector2( -10.7572, 8.79103 )
 
 [sub_resource type="Animation" id=35]
 length = 0.8
@@ -3069,135 +3068,6 @@ tracks/4/keys = {
 "values": [ 75.0, 76.0 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Attack"
-length = 0.45
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 42, 43, 44, 45, 46 ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "Death"
-length = 0.94
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 62, 63, 64, 65, 66, 67, 68 ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "Fall"
-length = 0.15
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 22, 23 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "Idle"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "Jump"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 14, 15, 16, 17 ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "Run"
-length = 0.55
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 148, 149, 150, 151, 152, 153 ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "Slide"
-length = 0.15
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 24, 25 ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "Take Hit"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 59, 60, 61 ]
-}
-
 [sub_resource type="AnimationNodeAnimation" id=54]
 animation = "swrd-shte"
 
@@ -3221,6 +3091,9 @@ animation = "attack3"
 
 [sub_resource type="AnimationNodeAnimation" id=60]
 animation = "die"
+
+[sub_resource type="AnimationNodeAnimation" id=108]
+animation = "fall"
 
 [sub_resource type="AnimationNodeAnimation" id=61]
 animation = "fall"
@@ -3345,19 +3218,19 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=107]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=108]
-switch_mode = 2
-auto_advance = true
-advance_condition = "not sworddrawn"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=109]
 switch_mode = 2
 auto_advance = true
-advance_condition = "swordisdrawn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=110]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=111]
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=97]
 "states/Sword Away/node" = SubResource( 54 )
-"states/Sword Away/position" = Vector2( 612, 146 )
+"states/Sword Away/position" = Vector2( 619, 163 )
 "states/Sword Draw/node" = SubResource( 55 )
 "states/Sword Draw/position" = Vector2( 574.393, 50 )
 "states/Sword Slash/node" = SubResource( 58 )
@@ -3374,6 +3247,8 @@ states/die/node = SubResource( 60 )
 states/die/position = Vector2( 837, 42 )
 states/fall/node = SubResource( 61 )
 states/fall/position = Vector2( 387, 293 )
+"states/fall 2/node" = SubResource( 108 )
+"states/fall 2/position" = Vector2( 574.393, -109.964 )
 states/hurt/node = SubResource( 62 )
 states/hurt/position = Vector2( 630, 293 )
 states/idle/node = SubResource( 64 )
@@ -3381,7 +3256,7 @@ states/idle/position = Vector2( 387, 163 )
 states/idle-2/node = SubResource( 63 )
 states/idle-2/position = Vector2( 837, 146 )
 states/jump/node = SubResource( 105 )
-states/jump/position = Vector2( 574.393, -39.4629 )
+states/jump/position = Vector2( 574.393, -217.11 )
 states/kick/node = SubResource( 65 )
 states/kick/position = Vector2( 150, 163 )
 states/punch/node = SubResource( 66 )
@@ -3392,10 +3267,10 @@ states/walk/node = SubResource( 68 )
 states/walk/position = Vector2( 387, 71 )
 "states/walk 2/node" = SubResource( 100 )
 "states/walk 2/position" = Vector2( 1023.57, -30.1096 )
-transitions = [ "idle-2", "attack3", SubResource( 69 ), "attack3", "attack2", SubResource( 70 ), "attack2", "attack1", SubResource( 71 ), "attack1", "idle-2", SubResource( 72 ), "idle-2", "Sword Away", SubResource( 73 ), "Sword Away", "idle", SubResource( 74 ), "idle", "Sword Draw", SubResource( 75 ), "Sword Draw", "idle-2", SubResource( 76 ), "idle", "walk", SubResource( 77 ), "walk", "idle", SubResource( 78 ), "walk", "run-punch", SubResource( 79 ), "run-punch", "walk", SubResource( 80 ), "idle", "punch", SubResource( 81 ), "idle", "kick", SubResource( 82 ), "kick", "idle", SubResource( 83 ), "punch", "idle", SubResource( 84 ), "idle", "fall", SubResource( 85 ), "idle-2", "fall", SubResource( 86 ), "fall", "idle-2", SubResource( 87 ), "fall", "idle", SubResource( 88 ), "idle-2", "Sword Slash", SubResource( 89 ), "Sword Slash", "idle-2", SubResource( 90 ), "idle-2", "hurt", SubResource( 91 ), "idle", "die", SubResource( 92 ), "idle-2", "die", SubResource( 93 ), "hurt", "idle-2", SubResource( 94 ), "idle", "hurt", SubResource( 95 ), "hurt", "idle", SubResource( 96 ), "idle-2", "Sword Slash Down", SubResource( 101 ), "Sword Slash Down", "idle-2", SubResource( 102 ), "idle-2", "walk 2", SubResource( 103 ), "walk 2", "idle-2", SubResource( 104 ), "idle", "jump", SubResource( 106 ), "idle-2", "jump", SubResource( 107 ), "jump", "idle", SubResource( 108 ), "jump", "idle-2", SubResource( 109 ) ]
+transitions = [ "idle-2", "attack3", SubResource( 69 ), "attack3", "attack2", SubResource( 70 ), "attack2", "attack1", SubResource( 71 ), "attack1", "idle-2", SubResource( 72 ), "idle-2", "Sword Away", SubResource( 73 ), "Sword Away", "idle", SubResource( 74 ), "idle", "Sword Draw", SubResource( 75 ), "Sword Draw", "idle-2", SubResource( 76 ), "idle", "walk", SubResource( 77 ), "walk", "idle", SubResource( 78 ), "walk", "run-punch", SubResource( 79 ), "run-punch", "walk", SubResource( 80 ), "idle", "punch", SubResource( 81 ), "idle", "kick", SubResource( 82 ), "kick", "idle", SubResource( 83 ), "punch", "idle", SubResource( 84 ), "idle", "fall", SubResource( 85 ), "idle-2", "fall", SubResource( 86 ), "fall", "idle-2", SubResource( 87 ), "fall", "idle", SubResource( 88 ), "idle-2", "Sword Slash", SubResource( 89 ), "Sword Slash", "idle-2", SubResource( 90 ), "idle-2", "hurt", SubResource( 91 ), "idle", "die", SubResource( 92 ), "idle-2", "die", SubResource( 93 ), "hurt", "idle-2", SubResource( 94 ), "idle", "hurt", SubResource( 95 ), "hurt", "idle", SubResource( 96 ), "idle-2", "Sword Slash Down", SubResource( 101 ), "Sword Slash Down", "idle-2", SubResource( 102 ), "idle-2", "walk 2", SubResource( 103 ), "walk 2", "idle-2", SubResource( 104 ), "idle", "jump", SubResource( 106 ), "idle-2", "jump", SubResource( 107 ), "jump", "fall 2", SubResource( 109 ), "fall 2", "idle-2", SubResource( 110 ), "fall 2", "idle", SubResource( 111 ) ]
 start_node = "idle"
 end_node = "die"
-graph_offset = Vector2( -25.6071, 94.7673 )
+graph_offset = Vector2( -86.6351, -301.964 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=98]
 
@@ -3411,7 +3286,7 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 1
+frame = 3
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -3467,16 +3342,6 @@ anims/walk = SubResource( 47 )
 anims/wall-run = SubResource( 48 )
 anims/wall-slide = SubResource( 49 )
 
-[node name="AnimationPlayeroriginal" type="AnimationPlayer" parent="."]
-anims/Attack = SubResource( 4 )
-anims/Death = SubResource( 5 )
-anims/Fall = SubResource( 6 )
-anims/Idle = SubResource( 2 )
-anims/Jump = SubResource( 9 )
-anims/Run = SubResource( 3 )
-anims/Slide = SubResource( 10 )
-"anims/Take Hit" = SubResource( 7 )
-
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 0, 30 )
@@ -3495,5 +3360,3 @@ tree_root = SubResource( 97 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 98 )
-"parameters/conditions/not sworddrawn" = false
-parameters/conditions/swordisdrawn = false
