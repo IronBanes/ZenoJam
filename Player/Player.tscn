@@ -40,4 +40,6 @@ frame = 4
 anims/Idle = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
 cast_to = Vector2( 0, 30 )
+collide_with_areas = true
