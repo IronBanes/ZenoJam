@@ -7,8 +7,8 @@
 extents = Vector2( 11, 23 )
 
 [sub_resource type="CapsuleShape2D" id=50]
-radius = 2.38641
-height = 21.7985
+radius = 11.1073
+height = 29.9987
 
 [sub_resource type="Animation" id=51]
 length = 0.001
@@ -3395,7 +3395,7 @@ states/walk/position = Vector2( 387, 71 )
 transitions = [ "idle-2", "attack3", SubResource( 69 ), "attack3", "attack2", SubResource( 70 ), "attack2", "attack1", SubResource( 71 ), "attack1", "idle-2", SubResource( 72 ), "idle-2", "Sword Away", SubResource( 73 ), "Sword Away", "idle", SubResource( 74 ), "idle", "Sword Draw", SubResource( 75 ), "Sword Draw", "idle-2", SubResource( 76 ), "idle", "walk", SubResource( 77 ), "walk", "idle", SubResource( 78 ), "walk", "run-punch", SubResource( 79 ), "run-punch", "walk", SubResource( 80 ), "idle", "punch", SubResource( 81 ), "idle", "kick", SubResource( 82 ), "kick", "idle", SubResource( 83 ), "punch", "idle", SubResource( 84 ), "idle", "fall", SubResource( 85 ), "idle-2", "fall", SubResource( 86 ), "fall", "idle-2", SubResource( 87 ), "fall", "idle", SubResource( 88 ), "idle-2", "Sword Slash", SubResource( 89 ), "Sword Slash", "idle-2", SubResource( 90 ), "idle-2", "hurt", SubResource( 91 ), "idle", "die", SubResource( 92 ), "idle-2", "die", SubResource( 93 ), "hurt", "idle-2", SubResource( 94 ), "idle", "hurt", SubResource( 95 ), "hurt", "idle", SubResource( 96 ), "idle-2", "Sword Slash Down", SubResource( 101 ), "Sword Slash Down", "idle-2", SubResource( 102 ), "idle-2", "walk 2", SubResource( 103 ), "walk 2", "idle-2", SubResource( 104 ), "idle", "jump", SubResource( 106 ), "idle-2", "jump", SubResource( 107 ), "jump", "idle", SubResource( 108 ), "jump", "idle-2", SubResource( 109 ) ]
 start_node = "idle"
 end_node = "die"
-graph_offset = Vector2( -25.6071, -84.5727 )
+graph_offset = Vector2( -25.6071, 94.7673 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=98]
 
@@ -3411,6 +3411,7 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
+frame = 1
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",

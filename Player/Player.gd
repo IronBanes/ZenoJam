@@ -78,7 +78,7 @@ func get_input():
 		$Sprite.scale.x = -1
 	
 	if Input.is_action_just_pressed("jump"):
-		state_machine.travel("Jump")
+		state_machine.travel("jump")
 		velocity.y = -Jump_speed
 		
 		return
