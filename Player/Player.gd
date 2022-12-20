@@ -1,7 +1,7 @@
 class_name Player
 extends Actor
 
-const GRAVITY = 200.0
+const GRAVITY = 100.0
 const WALK_SPEED = 200
 const Jump_speed = 4
 
