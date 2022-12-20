@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dash.png-f329e8d5e1da0126cd405c51a159eb79.stex"
+path="res://.import/characterOrigin.png-4ced6f3e6636fa21687c5a4ba08df0bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Dash.png"
-dest_files=[ "res://.import/Dash.png-f329e8d5e1da0126cd405c51a159eb79.stex" ]
+source_file="res://Player/characterOrigin.png"
+dest_files=[ "res://.import/characterOrigin.png-4ced6f3e6636fa21687c5a4ba08df0bf.stex" ]
 
 [params]
 
