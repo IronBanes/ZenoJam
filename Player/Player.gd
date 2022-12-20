@@ -15,9 +15,9 @@ func _physics_process(delta):
 	if $RayCast2D.is_colliding():
 		is_on_floor = 1
 
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		velocity.x = -WALK_SPEED
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("move_right"):
 		velocity.x =  WALK_SPEED
 	else:
 		velocity.x = 0
@@ -29,8 +29,12 @@ func _physics_process(delta):
 	# In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
 	move_and_slide(velocity, Vector2(0, -1))
 
-func _process(_delta):
-	if Input.is_action_pressed("ui_right"):
-		_animation_player.play("walk")
+func _process(_delta):#(Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"))
+	if  Input.is_action_pressed("move_right"):
+		$Sprite.flip_h = false
+		_animation_player.play("Run")
+	elif Input.is_action_pressed("move_left"):
+		$Sprite.flip_h = true
+		_animation_player.play("Run")
 	elif is_on_floor == 1:
 		_animation_player.play("Idle")
