@@ -5,7 +5,7 @@ extends Actor
 const MAXFALLSPEED = 200
 const MAXSPEED = 80
 const JUMPFORCE = 600
-const GRAVITY = 100
+
 
 var state_machine
 var attacks = ["Sword Slash","Sword Slash Down"]
@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 	var current = state_machine.get_current_node()
 
-	velocity.y += GRAVITY #_gravity
+	velocity.y += _gravity
 	if velocity.y > MAXFALLSPEED:
 		velocity.y = MAXFALLSPEED
 	if velocity.y > 0:

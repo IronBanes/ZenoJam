@@ -3284,7 +3284,7 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 2
+frame = 3
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
