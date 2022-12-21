@@ -4,7 +4,7 @@ extends Actor
 
 const MAXFALLSPEED = 200
 const MAXSPEED = 80
-const JUMPFORCE = 275
+const JUMPFORCE = 375
 
 
 var state_machine
@@ -33,11 +33,11 @@ func _physics_process(delta):
 
 	var current = state_machine.get_current_node()
 
-	velocity.y += 10
+	velocity.y += _gravity
 	if velocity.y > MAXFALLSPEED:
 		velocity.y = MAXFALLSPEED
 	elif velocity.y > 0:
-		state_machine.travel("fall")
+		state_machine.travel("fall 2")
 	else:
 		if sworddrawn && current == "idle":
 			state_machine.travel("idle-2")
@@ -102,9 +102,22 @@ func _physics_process(delta):
 				state_machine.travel("idle")
 	
 		if Input.is_action_just_pressed("jump"):
-			velocity.y = -JUMPFORCE
 			state_machine.travel("jump")
+			velocity.y = -JUMPFORCE
 			
+			
+	if Input.is_action_pressed("move_right"):
+		velocity.x = MAXSPEED
+		$Sprite.scale.x = 1
+	
+	elif Input.is_action_pressed("move_left"):
+		velocity.x = -MAXSPEED
+		$Sprite.scale.x = -1
+	
+	else:
+		velocity.x = 0 
+	
+	
 	velocity = move_and_slide(velocity)
 
 func hurt():

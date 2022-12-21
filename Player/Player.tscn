@@ -4,7 +4,7 @@
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11, 15.5 )
+extents = Vector2( 11, 15 )
 
 [sub_resource type="CapsuleShape2D" id=50]
 radius = 10.0213
@@ -3154,6 +3154,7 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=86]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=87]
+advance_condition = "Landed"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=89]
 
@@ -3182,6 +3183,7 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=107]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=109]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=74]
 switch_mode = 2
@@ -3209,6 +3211,7 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=85]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=88]
+advance_condition = "Landed"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=92]
 
@@ -3251,7 +3254,7 @@ states/idle/position = Vector2( 382, 163 )
 states/idle-2/node = SubResource( 63 )
 states/idle-2/position = Vector2( 837, 163 )
 states/jump/node = SubResource( 105 )
-states/jump/position = Vector2( 574.393, -217.11 )
+states/jump/position = Vector2( 574.393, -216.11 )
 states/kick/node = SubResource( 65 )
 states/kick/position = Vector2( 150, 163 )
 states/punch/node = SubResource( 66 )
@@ -3265,7 +3268,7 @@ states/walk/position = Vector2( 375, -30.1096 )
 transitions = [ "idle-2", "attack3", SubResource( 69 ), "attack3", "attack2", SubResource( 70 ), "attack2", "attack1", SubResource( 71 ), "attack1", "idle-2", SubResource( 72 ), "idle-2", "Sword Away", SubResource( 73 ), "Sword Draw", "idle-2", SubResource( 76 ), "walk", "run-punch", SubResource( 79 ), "run-punch", "walk", SubResource( 80 ), "idle-2", "fall", SubResource( 86 ), "fall", "idle-2", SubResource( 87 ), "idle-2", "Sword Slash", SubResource( 89 ), "Sword Slash", "idle-2", SubResource( 90 ), "idle-2", "hurt", SubResource( 91 ), "idle-2", "die", SubResource( 93 ), "hurt", "idle-2", SubResource( 94 ), "idle-2", "Sword Slash Down", SubResource( 101 ), "Sword Slash Down", "idle-2", SubResource( 102 ), "idle-2", "walk 2", SubResource( 103 ), "walk 2", "idle-2", SubResource( 104 ), "idle-2", "jump", SubResource( 107 ), "jump", "fall 2", SubResource( 109 ), "Sword Away", "idle", SubResource( 74 ), "idle", "Sword Draw", SubResource( 75 ), "idle", "walk", SubResource( 77 ), "walk", "idle", SubResource( 78 ), "idle", "punch", SubResource( 81 ), "idle", "kick", SubResource( 82 ), "kick", "idle", SubResource( 83 ), "punch", "idle", SubResource( 84 ), "idle", "fall", SubResource( 85 ), "fall", "idle", SubResource( 88 ), "idle", "die", SubResource( 92 ), "idle", "hurt", SubResource( 95 ), "hurt", "idle", SubResource( 96 ), "idle", "jump", SubResource( 106 ), "fall 2", "idle", SubResource( 111 ) ]
 start_node = "idle"
 end_node = "die"
-graph_offset = Vector2( -89.6351, -36.0544 )
+graph_offset = Vector2( -97.6351, -126.564 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=98]
 
@@ -3273,7 +3276,7 @@ graph_offset = Vector2( -89.6351, -36.0544 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 8.5 )
+position = Vector2( -1, 8 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -3281,7 +3284,7 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 22
+frame = 3
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
