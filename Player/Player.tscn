@@ -1,10 +1,10 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://Player/adventurer.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11, 23 )
+extents = Vector2( 11, 15.5 )
 
 [sub_resource type="CapsuleShape2D" id=50]
 radius = 10.0213
@@ -3141,26 +3141,58 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=73]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=74]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=75]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=76]
 switch_mode = 2
 auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=77]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=78]
-switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=79]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=80]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=86]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=87]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=89]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=90]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=91]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=93]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=94]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=101]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=102]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=103]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=104]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=107]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=109]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=74]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=75]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=77]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=78]
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=81]
 
@@ -3176,27 +3208,9 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=85]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=86]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=87]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=88]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=89]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=90]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=91]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=92]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=93]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=94]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=95]
 
@@ -3204,29 +3218,10 @@ auto_advance = true
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=101]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=102]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=103]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=104]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=106]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=107]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=109]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=110]
-switch_mode = 1
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=111]
-switch_mode = 1
+advance_condition = "Landed"
 
 [sub_resource type="AnimationNodeStateMachine" id=97]
 "states/Sword Away/node" = SubResource( 54 )
@@ -3252,9 +3247,9 @@ states/fall/position = Vector2( 387, 293 )
 states/hurt/node = SubResource( 62 )
 states/hurt/position = Vector2( 630, 293 )
 states/idle/node = SubResource( 64 )
-states/idle/position = Vector2( 387, 163 )
+states/idle/position = Vector2( 382, 163 )
 states/idle-2/node = SubResource( 63 )
-states/idle-2/position = Vector2( 837, 146 )
+states/idle-2/position = Vector2( 837, 163 )
 states/jump/node = SubResource( 105 )
 states/jump/position = Vector2( 574.393, -217.11 )
 states/kick/node = SubResource( 65 )
@@ -3262,15 +3257,15 @@ states/kick/position = Vector2( 150, 163 )
 states/punch/node = SubResource( 66 )
 states/punch/position = Vector2( 140, 262 )
 states/run-punch/node = SubResource( 67 )
-states/run-punch/position = Vector2( 211, 71 )
+states/run-punch/position = Vector2( 155, -30.1096 )
 states/walk/node = SubResource( 68 )
-states/walk/position = Vector2( 387, 71 )
+states/walk/position = Vector2( 375, -30.1096 )
 "states/walk 2/node" = SubResource( 100 )
 "states/walk 2/position" = Vector2( 1023.57, -30.1096 )
-transitions = [ "idle-2", "attack3", SubResource( 69 ), "attack3", "attack2", SubResource( 70 ), "attack2", "attack1", SubResource( 71 ), "attack1", "idle-2", SubResource( 72 ), "idle-2", "Sword Away", SubResource( 73 ), "Sword Away", "idle", SubResource( 74 ), "idle", "Sword Draw", SubResource( 75 ), "Sword Draw", "idle-2", SubResource( 76 ), "idle", "walk", SubResource( 77 ), "walk", "idle", SubResource( 78 ), "walk", "run-punch", SubResource( 79 ), "run-punch", "walk", SubResource( 80 ), "idle", "punch", SubResource( 81 ), "idle", "kick", SubResource( 82 ), "kick", "idle", SubResource( 83 ), "punch", "idle", SubResource( 84 ), "idle", "fall", SubResource( 85 ), "idle-2", "fall", SubResource( 86 ), "fall", "idle-2", SubResource( 87 ), "fall", "idle", SubResource( 88 ), "idle-2", "Sword Slash", SubResource( 89 ), "Sword Slash", "idle-2", SubResource( 90 ), "idle-2", "hurt", SubResource( 91 ), "idle", "die", SubResource( 92 ), "idle-2", "die", SubResource( 93 ), "hurt", "idle-2", SubResource( 94 ), "idle", "hurt", SubResource( 95 ), "hurt", "idle", SubResource( 96 ), "idle-2", "Sword Slash Down", SubResource( 101 ), "Sword Slash Down", "idle-2", SubResource( 102 ), "idle-2", "walk 2", SubResource( 103 ), "walk 2", "idle-2", SubResource( 104 ), "idle", "jump", SubResource( 106 ), "idle-2", "jump", SubResource( 107 ), "jump", "fall 2", SubResource( 109 ), "fall 2", "idle-2", SubResource( 110 ), "fall 2", "idle", SubResource( 111 ) ]
+transitions = [ "idle-2", "attack3", SubResource( 69 ), "attack3", "attack2", SubResource( 70 ), "attack2", "attack1", SubResource( 71 ), "attack1", "idle-2", SubResource( 72 ), "idle-2", "Sword Away", SubResource( 73 ), "Sword Draw", "idle-2", SubResource( 76 ), "walk", "run-punch", SubResource( 79 ), "run-punch", "walk", SubResource( 80 ), "idle-2", "fall", SubResource( 86 ), "fall", "idle-2", SubResource( 87 ), "idle-2", "Sword Slash", SubResource( 89 ), "Sword Slash", "idle-2", SubResource( 90 ), "idle-2", "hurt", SubResource( 91 ), "idle-2", "die", SubResource( 93 ), "hurt", "idle-2", SubResource( 94 ), "idle-2", "Sword Slash Down", SubResource( 101 ), "Sword Slash Down", "idle-2", SubResource( 102 ), "idle-2", "walk 2", SubResource( 103 ), "walk 2", "idle-2", SubResource( 104 ), "idle-2", "jump", SubResource( 107 ), "jump", "fall 2", SubResource( 109 ), "Sword Away", "idle", SubResource( 74 ), "idle", "Sword Draw", SubResource( 75 ), "idle", "walk", SubResource( 77 ), "walk", "idle", SubResource( 78 ), "idle", "punch", SubResource( 81 ), "idle", "kick", SubResource( 82 ), "kick", "idle", SubResource( 83 ), "punch", "idle", SubResource( 84 ), "idle", "fall", SubResource( 85 ), "fall", "idle", SubResource( 88 ), "idle", "die", SubResource( 92 ), "idle", "hurt", SubResource( 95 ), "hurt", "idle", SubResource( 96 ), "idle", "jump", SubResource( 106 ), "fall 2", "idle", SubResource( 111 ) ]
 start_node = "idle"
 end_node = "die"
-graph_offset = Vector2( -86.6351, -301.964 )
+graph_offset = Vector2( -89.6351, -36.0544 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=98]
 
@@ -3278,7 +3273,7 @@ graph_offset = Vector2( -86.6351, -301.964 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 1 )
+position = Vector2( -1, 8.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -3286,7 +3281,7 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 3
+frame = 22
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -3360,3 +3355,8 @@ tree_root = SubResource( 97 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 98 )
+parameters/conditions/Landed = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 6, 2 )
+current = true
