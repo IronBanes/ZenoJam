@@ -6,10 +6,10 @@
 scroll_base_scale = Vector2( 0.4, 0 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2( 760, 0 )
+motion_mirroring = Vector2( 480, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( -108, -24 )
-scale = Vector2( 0.402083, 0.361574 )
+position = Vector2( 0, 2.00001 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 centered = false
