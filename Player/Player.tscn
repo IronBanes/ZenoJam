@@ -1823,7 +1823,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id=34]
-length = 0.6
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -1879,7 +1879,7 @@ tracks/4/loop_wrap = false
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 14.0, 15.0, 16.0, 17.0 ]
@@ -3455,7 +3455,7 @@ nodes/Walk/position = Vector2( 940, -180 )
 nodes/in_air/node = SubResource( 130 )
 nodes/in_air/position = Vector2( 1720, -160 )
 nodes/output/position = Vector2( 2080, -320 )
-node_connections = [ "output", 0, "GroundorAir", "Idle_or_Walk", 0, "Idles", "Idle_or_Walk", 1, "Walk", "Idles", 0, "Melee Idle", "Idles", 1, "Sword Idle", "Fighter Attacks", 0, "Punch", "Fighter Attacks", 1, "Kick", "Fighter Attacks", 2, "Run Punch", "Sword Attacks", 0, "Heavy Sword Attack", "Sword Attacks", 1, "Light Sword Attack", "MoveorSword", 0, "AttackorMove", "MoveorSword", 1, "Sword Changer", "GroundorAir", 0, "MoveorSword", "GroundorAir", 1, "in_air", "SFMelee", 0, "Sword Attacks", "SFMelee", 1, "Fighter Attacks", "in_air", 0, "Fall", "in_air", 1, "Jump", "Sword Changer", 0, "Animation", "Sword Changer", 1, "Animation 2", "AttackorMove", 0, "SFMelee", "AttackorMove", 1, "Idle_or_Walk" ]
+node_connections = [ "in_air", 0, "Fall", "in_air", 1, "Jump", "Sword Attacks", 0, "Heavy Sword Attack", "Sword Attacks", 1, "Light Sword Attack", "Sword Changer", 0, "Animation", "Sword Changer", 1, "Animation 2", "Fighter Attacks", 0, "Punch", "Fighter Attacks", 1, "Kick", "Fighter Attacks", 2, "Run Punch", "MoveorSword", 0, "AttackorMove", "MoveorSword", 1, "Sword Changer", "GroundorAir", 0, "MoveorSword", "GroundorAir", 1, "in_air", "Idles", 0, "Melee Idle", "Idles", 1, "Sword Idle", "AttackorMove", 0, "SFMelee", "AttackorMove", 1, "Idle_or_Walk", "Idle_or_Walk", 0, "Idles", "Idle_or_Walk", 1, "Walk", "SFMelee", 0, "Sword Attacks", "SFMelee", 1, "Fighter Attacks", "output", 0, "GroundorAir" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=137]
 
@@ -3471,6 +3471,7 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
+frame = 3
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -3542,6 +3543,7 @@ disabled = true
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 97 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 98 )
 parameters/conditions/Landed = false
 
