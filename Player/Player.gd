@@ -167,6 +167,9 @@ func _physics_process(delta):
 		if sworddrawn && current == "idle":
 			state_machine.travel("idle-2")
 
+	if Input.is_action_just_pressed("r"):
+			get_tree().reload_current_scene()
+
 	if Input.is_action_just_pressed("Light Attack"):
 		if (current == "idle-2" || current == "walk 2"):
 			state_machine.travel(attacks[randi()%2])
