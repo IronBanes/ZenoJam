@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=133 format=2]
 
 [ext_resource path="res://Player/adventurer.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
@@ -2755,7 +2755,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=45]
 length = 0.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -2819,7 +2818,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=46]
 length = 0.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -3277,6 +3275,19 @@ graph_offset = Vector2( -97.6351, -126.564 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=98]
 
+[sub_resource type="AnimationNodeAnimation" id=138]
+animation = "swrd-shte"
+
+[sub_resource type="AnimationNodeAnimation" id=139]
+animation = "swrd-drw"
+
+[sub_resource type="AnimationNodeTransition" id=131]
+input_count = 2
+input_0/name = "Melee"
+input_0/auto_advance = false
+input_1/name = "Movement"
+input_1/auto_advance = true
+
 [sub_resource type="AnimationNodeAnimation" id=112]
 animation = "fall"
 
@@ -3288,6 +3299,13 @@ input_1/name = "Kick"
 input_1/auto_advance = false
 input_2/name = "RunPunch"
 input_2/auto_advance = false
+
+[sub_resource type="AnimationNodeTransition" id=134]
+input_count = 2
+input_0/name = "Ground"
+input_0/auto_advance = false
+input_1/name = "Air"
+input_1/auto_advance = false
 
 [sub_resource type="AnimationNodeAnimation" id=114]
 animation = "attack1"
@@ -3343,44 +3361,18 @@ animation = "attack3"
 [sub_resource type="AnimationNodeAnimation" id=125]
 animation = "idle"
 
+[sub_resource type="AnimationNodeTransition" id=140]
+input_count = 2
+input_0/name = "Movement_Melee"
+input_0/auto_advance = false
+input_1/name = "Sword Change"
+input_1/auto_advance = true
+
 [sub_resource type="AnimationNodeAnimation" id=126]
 animation = "punch"
 
 [sub_resource type="AnimationNodeAnimation" id=127]
 animation = "run-punch"
-
-[sub_resource type="AnimationNodeTransition" id=128]
-input_count = 2
-input_0/name = "HeavySwordAttack"
-input_0/auto_advance = false
-input_1/name = "LightSwordAttack"
-input_1/auto_advance = false
-
-[sub_resource type="AnimationNodeAnimation" id=129]
-animation = "idle-2"
-
-[sub_resource type="AnimationNodeTransition" id=130]
-input_count = 2
-input_0/name = "Fall"
-input_0/auto_advance = false
-input_1/name = "Jump"
-input_1/auto_advance = false
-
-[sub_resource type="AnimationNodeTransition" id=131]
-input_count = 3
-input_0/name = "Melee"
-input_0/auto_advance = true
-input_1/name = "Movement"
-input_1/auto_advance = false
-input_2/name = "Sword Change"
-input_2/auto_advance = false
-
-[sub_resource type="AnimationNodeTransition" id=132]
-input_count = 2
-input_0/name = "state 0"
-input_0/auto_advance = false
-input_1/name = "state 1"
-input_1/auto_advance = false
 
 [sub_resource type="AnimationNodeTransition" id=133]
 input_count = 2
@@ -3389,22 +3381,47 @@ input_0/auto_advance = false
 input_1/name = "Fighter Melee"
 input_1/auto_advance = false
 
-[sub_resource type="AnimationNodeTransition" id=134]
+[sub_resource type="AnimationNodeTransition" id=128]
 input_count = 2
-input_0/name = "Ground"
+input_0/name = "HeavySwordAttack"
 input_0/auto_advance = false
-input_1/name = "Air"
+input_1/name = "LightSwordAttack"
 input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeTransition" id=132]
+input_count = 2
+input_0/name = "Sword Draw"
+input_0/auto_advance = false
+input_1/name = "Sword Sheathe"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=129]
+animation = "idle-2"
 
 [sub_resource type="AnimationNodeAnimation" id=135]
 animation = "walk"
 
+[sub_resource type="AnimationNodeTransition" id=130]
+input_count = 2
+input_0/name = "Fall"
+input_0/auto_advance = false
+input_1/name = "Jump"
+input_1/auto_advance = false
+
 [sub_resource type="AnimationNodeBlendTree" id=136]
-graph_offset = Vector2( 52.0961, -294.602 )
+graph_offset = Vector2( 146.696, -206.065 )
+nodes/Animation/node = SubResource( 139 )
+nodes/Animation/position = Vector2( 860, -60 )
+"nodes/Animation 2/node" = SubResource( 138 )
+"nodes/Animation 2/position" = Vector2( 860, 60 )
+nodes/AttackorMove/node = SubResource( 131 )
+nodes/AttackorMove/position = Vector2( 1400, -420 )
 nodes/Fall/node = SubResource( 112 )
-nodes/Fall/position = Vector2( 580, 260 )
+nodes/Fall/position = Vector2( 1500, -100 )
 "nodes/Fighter Attacks/node" = SubResource( 113 )
 "nodes/Fighter Attacks/position" = Vector2( 640, -440 )
+nodes/GroundorAir/node = SubResource( 134 )
+nodes/GroundorAir/position = Vector2( 1900, -320 )
 "nodes/Heavy Sword Attack/node" = SubResource( 119 )
 "nodes/Heavy Sword Attack/position" = Vector2( 280, -760 )
 nodes/Idle_or_Walk/node = SubResource( 120 )
@@ -3412,35 +3429,33 @@ nodes/Idle_or_Walk/position = Vector2( 1140, -300 )
 nodes/Idles/node = SubResource( 121 )
 nodes/Idles/position = Vector2( 940, -320 )
 nodes/Jump/node = SubResource( 122 )
-nodes/Jump/position = Vector2( 580, 420 )
+nodes/Jump/position = Vector2( 1500, 0 )
 nodes/Kick/node = SubResource( 123 )
 nodes/Kick/position = Vector2( 280, -360 )
 "nodes/Light Sword Attack/node" = SubResource( 124 )
 "nodes/Light Sword Attack/position" = Vector2( 280, -620 )
 "nodes/Melee Idle/node" = SubResource( 125 )
 "nodes/Melee Idle/position" = Vector2( 700, -260 )
+nodes/MoveorSword/node = SubResource( 140 )
+nodes/MoveorSword/position = Vector2( 1680, -380 )
 nodes/Punch/node = SubResource( 126 )
 nodes/Punch/position = Vector2( 280, -480 )
 "nodes/Run Punch/node" = SubResource( 127 )
 "nodes/Run Punch/position" = Vector2( 280, -240 )
+nodes/SFMelee/node = SubResource( 133 )
+nodes/SFMelee/position = Vector2( 880, -540 )
 "nodes/Sword Attacks/node" = SubResource( 128 )
 "nodes/Sword Attacks/position" = Vector2( 640, -740 )
+"nodes/Sword Changer/node" = SubResource( 132 )
+"nodes/Sword Changer/position" = Vector2( 1080, -60 )
 "nodes/Sword Idle/node" = SubResource( 129 )
 "nodes/Sword Idle/position" = Vector2( 700, -140 )
-nodes/Transition/node = SubResource( 134 )
-nodes/Transition/position = Vector2( 1640, -300 )
-"nodes/Transition 2/node" = SubResource( 130 )
-"nodes/Transition 2/position" = Vector2( 860, 260 )
-"nodes/Transition 3/node" = SubResource( 131 )
-"nodes/Transition 3/position" = Vector2( 1400, -360 )
-"nodes/Transition 4/node" = SubResource( 132 )
-"nodes/Transition 4/position" = Vector2( 1100, -40 )
-"nodes/Transition 5/node" = SubResource( 133 )
-"nodes/Transition 5/position" = Vector2( 880, -540 )
 nodes/Walk/node = SubResource( 135 )
 nodes/Walk/position = Vector2( 940, -180 )
-nodes/output/position = Vector2( 1820, -300 )
-node_connections = [ "Sword Attacks", 0, "Heavy Sword Attack", "Sword Attacks", 1, "Light Sword Attack", "Idles", 0, "Melee Idle", "Idles", 1, "Sword Idle", "Idle_or_Walk", 0, "Idles", "Idle_or_Walk", 1, "Walk", "Fighter Attacks", 0, "Punch", "Fighter Attacks", 1, "Kick", "Fighter Attacks", 2, "Run Punch", "Transition", 0, "Transition 3", "Transition", 1, "Transition 2", "Transition 3", 0, "Transition 5", "Transition 3", 1, "Idle_or_Walk", "Transition 2", 0, "Fall", "Transition 2", 1, "Jump", "Transition 5", 0, "Sword Attacks", "Transition 5", 1, "Fighter Attacks", "output", 0, "Transition" ]
+nodes/in_air/node = SubResource( 130 )
+nodes/in_air/position = Vector2( 1720, -160 )
+nodes/output/position = Vector2( 2080, -320 )
+node_connections = [ "output", 0, "GroundorAir", "Idle_or_Walk", 0, "Idles", "Idle_or_Walk", 1, "Walk", "Idles", 0, "Melee Idle", "Idles", 1, "Sword Idle", "Fighter Attacks", 0, "Punch", "Fighter Attacks", 1, "Kick", "Fighter Attacks", 2, "Run Punch", "Sword Attacks", 0, "Heavy Sword Attack", "Sword Attacks", 1, "Light Sword Attack", "MoveorSword", 0, "AttackorMove", "MoveorSword", 1, "Sword Changer", "GroundorAir", 0, "MoveorSword", "GroundorAir", 1, "in_air", "SFMelee", 0, "Sword Attacks", "SFMelee", 1, "Fighter Attacks", "in_air", 0, "Fall", "in_air", 1, "Jump", "Sword Changer", 0, "Animation", "Sword Changer", 1, "Animation 2", "AttackorMove", 0, "SFMelee", "AttackorMove", 1, "Idle_or_Walk" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=137]
 
@@ -3456,7 +3471,6 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 1
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -3539,13 +3553,14 @@ current = true
 tree_root = SubResource( 136 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
+parameters/AttackorMove/current = 0
 "parameters/Fighter Attacks/current" = 1
+parameters/GroundorAir/current = 0
 "parameters/Heavy Sword Attack/playback" = SubResource( 137 )
 parameters/Idle_or_Walk/current = 0
 parameters/Idles/current = 0
+parameters/MoveorSword/current = 0
+parameters/SFMelee/current = 1
 "parameters/Sword Attacks/current" = 0
-parameters/Transition/current = 0
-"parameters/Transition 2/current" = 1
-"parameters/Transition 3/current" = 1
-"parameters/Transition 4/current" = 0
-"parameters/Transition 5/current" = 1
+"parameters/Sword Changer/current" = 1
+parameters/in_air/current = 1
