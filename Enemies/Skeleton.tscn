@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Enemies/Skeleton.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/Skeleton.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 14 )
@@ -17,7 +18,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -154,6 +155,9 @@ animation = "unsheath"
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
+auto_advance = true
+advance_condition = "IsArmed"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
@@ -162,32 +166,42 @@ animation = "unsheath"
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+auto_advance = true
+advance_condition = "IsAttacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
+auto_advance = true
+advance_condition = "IsArmedWalking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 1
+auto_advance = true
+advance_condition = "IsUnsheathing"
 
 [sub_resource type="AnimationNodeStateMachine" id=29]
 states/armed_walk/node = SubResource( 9 )
-states/armed_walk/position = Vector2( 592, 140 )
+states/armed_walk/position = Vector2( 629, 165 )
 states/idle/node = SubResource( 10 )
 states/idle/position = Vector2( 411, 67 )
 states/skel_attack/node = SubResource( 11 )
-states/skel_attack/position = Vector2( 592, 229 )
+states/skel_attack/position = Vector2( 629, 269 )
 "states/take hit/node" = SubResource( 12 )
-"states/take hit/position" = Vector2( 411, 229 )
+"states/take hit/position" = Vector2( 411, 269 )
 states/unarmed_walk/node = SubResource( 13 )
-states/unarmed_walk/position = Vector2( 592, 67 )
+states/unarmed_walk/position = Vector2( 629, 67 )
 states/unsheath/node = SubResource( 14 )
-states/unsheath/position = Vector2( 411, 140 )
+states/unsheath/position = Vector2( 411, 165 )
 transitions = [ "idle", "unsheath", SubResource( 15 ), "idle", "unarmed_walk", SubResource( 16 ), "unsheath", "armed_walk", SubResource( 17 ), "armed_walk", "skel_attack", SubResource( 18 ), "skel_attack", "armed_walk", SubResource( 19 ), "armed_walk", "unsheath", SubResource( 20 ), "unsheath", "idle", SubResource( 21 ), "unarmed_walk", "idle", SubResource( 22 ), "unsheath", "take hit", SubResource( 23 ), "armed_walk", "take hit", SubResource( 24 ), "skel_attack", "take hit", SubResource( 25 ), "take hit", "skel_attack", SubResource( 26 ), "take hit", "armed_walk", SubResource( 27 ), "take hit", "unsheath", SubResource( 28 ) ]
-graph_offset = Vector2( -8, -37 )
+graph_offset = Vector2( -32, 21 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=30]
 
@@ -195,6 +209,9 @@ graph_offset = Vector2( -8, -37 )
 b = Vector2( -9.67657, 7.16687 )
 
 [node name="Skeleton" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2, -4 )
@@ -205,7 +222,7 @@ position = Vector2( 0, -21 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
-frame = 4
+frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 8 )
@@ -219,11 +236,26 @@ anims/unsheath = SubResource( 7 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 29 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 30 )
+parameters/conditions/IsArmed = false
+parameters/conditions/IsArmedWalking = false
+parameters/conditions/IsAttacking = false
+parameters/conditions/IsUnsheathing = false
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 6, -4 )
 rotation = 9.33562
 shape = SubResource( 31 )
+disabled = true
+
+[node name="floor_checker" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 4
+
+[node name="player_checker" type="RayCast2D" parent="."]
+cast_to = Vector2( 200, 0 )
