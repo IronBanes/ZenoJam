@@ -9,7 +9,13 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 122, 55 )
+position = Vector2( 98, 55 )
+friction = 0.449
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_bottom = 160
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -21,6 +27,6 @@ tile_data = PoolIntArray( -1179583, 1610612748, 0, -1179582, 1610612748, 0, -117
 position = Vector2( 456, 74 )
 
 [node name="Skeleton" parent="." instance=ExtResource( 4 )]
-position = Vector2( 400, 65 )
+position = Vector2( 402, 69 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]

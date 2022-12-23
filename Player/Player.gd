@@ -16,6 +16,8 @@ var attacks = ["Sword Slash", "Sword Slash Down"]
 
 var sworddrawn = false
 
+
+
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
 	$AnimationTree["parameters/conditions/Landed"] = 0
@@ -27,7 +29,7 @@ func get_input():
 	
 	if Input.is_action_pressed("move_right"):
 		
-		if is_on_floor():
+		if is_on_floor() && (current != "attack1" || current != "attack2"  || current != "attack3" || current != "Sword Slash" || current != "Slash Slash Down" || current != "run-punch" || current != "kick" || current != "punch"):
 			if sworddrawn:
 				state_machine.travel("walk 2")
 			if not sworddrawn:
@@ -38,7 +40,7 @@ func get_input():
 	
 	if Input.is_action_pressed("move_left"):
 		
-		if is_on_floor():
+		if is_on_floor() && (current != "attack1" || current != "attack2"  || current != "attack3" || current != "Sword Slash" || current != "Slash Slash Down" || current != "run-punch" || current != "kick" || current != "punch"):
 			if sworddrawn:
 				state_machine.travel("walk 2")
 			if not sworddrawn:
@@ -55,21 +57,19 @@ func get_input():
 	if Input.is_action_just_pressed("Light Attack"):
 		if (current == "idle-2" || current == "walk 2"):
 			state_machine.travel(attacks[randi()%2])
-			return
+			
 		elif current == "idle":
 			state_machine.travel("punch")
-			return
+			
 		elif current == "walk":
 			state_machine.travel("run-punch")
-			return
+			
 	
 	if Input.is_action_just_pressed("Heavy Attack"):
 		if (current == "idle-2" || current == "walk 2"):
 			state_machine.travel("attack1")
-			return
 		elif current == "idle":
 			state_machine.travel("kick")
-			return
 
 	if Input.is_action_just_pressed("Draw Sword Sheathe Sword"):
 
@@ -110,12 +110,12 @@ func _physics_process(delta):
 	else:
 		$AnimationTree["parameters/conditions/Landed"] = 0
 		
-	if abs(velocity.x) < acceleration && sworddrawn:
+	if (abs(velocity.x) < acceleration && sworddrawn) && (current == "walk 2"):
 		if is_on_floor():
 			state_machine.travel("idle-2")
 		
 		
-	elif abs(velocity.x) < acceleration && !sworddrawn:
+	elif (abs(velocity.x) < acceleration && !sworddrawn) && (current == "walk"):
 		if is_on_floor():
 			state_machine.travel("idle")
 		
