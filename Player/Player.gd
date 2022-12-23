@@ -1,11 +1,11 @@
 class_name Player
 extends KinematicBody2D
 
-export (int) var speed = 1200
-export (int) var jump_speed = -1800
-export (int) var gravity = 4000
+export (int) var speed = 150
+export (int) var jump_speed = -275
+export (int) var gravity = 380
 
-export (float, 0, 1.0) var friction = 0.1
+export (float, 0, 1.0) var friction = 0.9
 export (float, 0, 1.0) var acceleration = 0.25
 
 var velocity = Vector2.ZERO
@@ -36,7 +36,7 @@ func get_input():
 		$Sprite.scale.x = 1
 		dir += 1
 	
-	elif Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left"):
 		
 		if is_on_floor():
 			if sworddrawn:
@@ -46,8 +46,13 @@ func get_input():
 		
 		$Sprite.scale.x = -1
 		dir -= 1
-		
-	elif Input.is_action_just_pressed("Light Attack"):
+	
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			state_machine.travel("jump")
+			velocity.y = jump_speed
+	
+	if Input.is_action_just_pressed("Light Attack"):
 		if (current == "idle-2" || current == "walk 2"):
 			state_machine.travel(attacks[randi()%2])
 			return
@@ -58,7 +63,7 @@ func get_input():
 			state_machine.travel("run-punch")
 			return
 	
-	elif Input.is_action_just_pressed("Heavy Attack"):
+	if Input.is_action_just_pressed("Heavy Attack"):
 		if (current == "idle-2" || current == "walk 2"):
 			state_machine.travel("attack1")
 			return
@@ -66,7 +71,7 @@ func get_input():
 			state_machine.travel("kick")
 			return
 
-	elif Input.is_action_just_pressed("Draw Sword Sheathe Sword"):
+	if Input.is_action_just_pressed("Draw Sword Sheathe Sword"):
 
 		if sworddrawn:
 			state_machine.travel("idle")
@@ -80,25 +85,40 @@ func get_input():
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
+	
+	
+	if velocity.y > -jump_speed:
+		velocity.y = -jump_speed
+	elif velocity.y > 0:
+		state_machine.travel("fall 2")
+	else:
+		if sworddrawn && (current == "idle"):
+			state_machine.travel("idle-2")
+	
 		
 func _physics_process(delta):
 	get_input()
 	var current = state_machine.get_current_node()
 	velocity.y += gravity * delta
 	
+	if is_on_floor():
+		$AnimationTree["parameters/conditions/Landed"] = 1
+		
+	else:
+		$AnimationTree["parameters/conditions/Landed"] = 0
+		
+	if abs(velocity.x) < acceleration && sworddrawn:
+		if is_on_floor():
+			state_machine.travel("idle-2")
+		
+		
+	elif abs(velocity.x) < acceleration && !sworddrawn:
+		if is_on_floor():
+			state_machine.travel("idle")
+		
+		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
-			velocity.y = jump_speed
-
-	if velocity.y > jump_speed:
-		velocity.y = jump_speed
-	elif velocity.y > 0:
-		state_machine.travel("fall 2")
-	else:
-		if sworddrawn && current == "idle":
-			state_machine.travel("idle-2")
 
 func hurt():
 	state_machine.travel("hurt")

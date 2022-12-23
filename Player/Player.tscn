@@ -1440,7 +1440,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=28]
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -3197,7 +3196,6 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=77]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=78]
-switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=81]
 
@@ -3253,7 +3251,7 @@ states/fall/position = Vector2( 387, 293 )
 states/hurt/node = SubResource( 62 )
 states/hurt/position = Vector2( 630, 293 )
 states/idle/node = SubResource( 64 )
-states/idle/position = Vector2( 382, 163 )
+states/idle/position = Vector2( 387, 163 )
 states/idle-2/node = SubResource( 63 )
 states/idle-2/position = Vector2( 837, 163 )
 states/jump/node = SubResource( 105 )
@@ -3269,8 +3267,9 @@ states/walk/position = Vector2( 375, -30.1096 )
 "states/walk 2/node" = SubResource( 100 )
 "states/walk 2/position" = Vector2( 1023.57, -30.1096 )
 transitions = [ "idle-2", "attack3", SubResource( 69 ), "attack3", "attack2", SubResource( 70 ), "attack2", "attack1", SubResource( 71 ), "attack1", "idle-2", SubResource( 72 ), "idle-2", "Sword Away", SubResource( 73 ), "Sword Draw", "idle-2", SubResource( 76 ), "walk", "run-punch", SubResource( 79 ), "run-punch", "walk", SubResource( 80 ), "idle-2", "fall", SubResource( 86 ), "fall", "idle-2", SubResource( 87 ), "idle-2", "Sword Slash", SubResource( 89 ), "Sword Slash", "idle-2", SubResource( 90 ), "idle-2", "hurt", SubResource( 91 ), "idle-2", "die", SubResource( 93 ), "hurt", "idle-2", SubResource( 94 ), "idle-2", "Sword Slash Down", SubResource( 101 ), "Sword Slash Down", "idle-2", SubResource( 102 ), "idle-2", "walk 2", SubResource( 103 ), "walk 2", "idle-2", SubResource( 104 ), "idle-2", "jump", SubResource( 107 ), "jump", "fall 2", SubResource( 109 ), "Sword Away", "idle", SubResource( 74 ), "idle", "Sword Draw", SubResource( 75 ), "idle", "walk", SubResource( 77 ), "walk", "idle", SubResource( 78 ), "idle", "punch", SubResource( 81 ), "idle", "kick", SubResource( 82 ), "kick", "idle", SubResource( 83 ), "punch", "idle", SubResource( 84 ), "idle", "fall", SubResource( 85 ), "fall", "idle", SubResource( 88 ), "idle", "die", SubResource( 92 ), "idle", "hurt", SubResource( 95 ), "hurt", "idle", SubResource( 96 ), "idle", "jump", SubResource( 106 ), "fall 2", "idle", SubResource( 111 ) ]
+start_node = "idle"
 end_node = "die"
-graph_offset = Vector2( 63.3649, 76.436 )
+graph_offset = Vector2( -57.6351, -100.988 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=98]
 
@@ -3286,7 +3285,7 @@ position = Vector2( 3, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 103
+frame = 2
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -3360,7 +3359,7 @@ tree_root = SubResource( 97 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 98 )
-parameters/conditions/Landed = false
+parameters/conditions/Landed = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 6, 2 )
