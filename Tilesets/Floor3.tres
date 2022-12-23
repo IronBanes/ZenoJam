@@ -4,10 +4,10 @@
 [ext_resource path="res://Tilesets/lava.tres" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 16.0625, 32, 16.0625 )
+points = PoolVector2Array( 32, 32, 0, 32, 0, 16, 32, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
-points = PoolVector2Array( 0, 16, 32, 15.875, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 16, 32, 16, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -25,16 +25,16 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 0, 16.1225, 17.3902, 21.7947, 31.9257, 31.808, 0, 32 )
+points = PoolVector2Array( 0, 16, 16.9195, 20.8878, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 0, 18.125, 32, 18.0625, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 18.05, 32, 18.05, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=21]
-points = PoolVector2Array( 0, 18, 32, 18.0625, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 18.05, 32, 18.05, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
-points = PoolVector2Array( 0, 18.0625, 32, 17.9613, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 18.05, 32, 18.05, 32, 32, 0, 32 )
 
 [sub_resource type="OccluderPolygon2D" id=17]
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
