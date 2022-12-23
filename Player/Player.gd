@@ -97,6 +97,9 @@ func get_input():
 	
 		
 func _physics_process(delta):
+	if Input.is_action_just_pressed("r"):
+		get_tree().reload_current_scene()
+		
 	get_input()
 	var current = state_machine.get_current_node()
 	velocity.y += gravity * delta
