@@ -194,7 +194,7 @@ graph_offset = Vector2( -8, -37 )
 [sub_resource type="SegmentShape2D" id=31]
 b = Vector2( -9.67657, 7.16687 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Skeleton" type="KinematicBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2, -4 )
