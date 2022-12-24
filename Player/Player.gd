@@ -58,6 +58,7 @@ func get_input():
 			state_machine.travel("jump")
 			velocity.y = jump_speed
 	
+	
 	if Input.is_action_just_pressed("Light Attack"):
 		if (current == "idle-2" || current == "walk 2"):
 			state_machine.travel(attacks[randi()%2])
@@ -108,6 +109,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("r"):
 		get_tree().reload_current_scene()
 		
+	if Input.is_action_just_pressed("last"):
+		get_tree().change_scene("res://Levels/F2/Level_5.tscn")
 	get_input()
 	var current = state_machine.get_current_node()
 	velocity.y += gravity * delta

@@ -3,7 +3,7 @@
 [ext_resource path="res://Tilesets/Floor3.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://flag.tscn" type="PackedScene" id=3]
-[ext_resource path="res://lavas/lava1.gd" type="Script" id=4]
+[ext_resource path="res://Levels/Lava.gd" type="Script" id=4]
 [ext_resource path="res://Backgrounds/lavabackground.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]

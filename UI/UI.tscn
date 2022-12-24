@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Label.gd" type="Script" id=1]
 
 [sub_resource type="GradientTexture" id=1]
 
@@ -14,3 +16,9 @@ margin_bottom = 40.0
 margin_right = 2048.0
 margin_bottom = 40.0
 texture_under = SubResource( 1 )
+
+[node name="Health" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Health: "
+script = ExtResource( 1 )
