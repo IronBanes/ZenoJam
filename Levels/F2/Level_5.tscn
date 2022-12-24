@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tilesets/Floor2.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Tilesets/platforms/water_2x1_plat.png" type="Texture" id=5]
 [ext_resource path="res://Levels/F2/F2-2.gd" type="Script" id=6]
 [ext_resource path="res://Enemies/WaterSlime.tscn" type="PackedScene" id=7]
+[ext_resource path="res://flag.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 8 )
@@ -55,7 +56,7 @@ position = Vector2( 1935, -330 )
 position = Vector2( 1617, 37 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 870, -116 )
+position = Vector2( 121, 84 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -101,3 +102,7 @@ position = Vector2( 1982, 37 )
 
 [node name="Skeleton4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2256, -254 )
+
+[node name="Area2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2804, -670 )
+NEXT_LEVEL = "res://Levels/F1/Level_6.tscn"

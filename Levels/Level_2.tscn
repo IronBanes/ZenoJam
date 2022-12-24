@@ -141,7 +141,7 @@ script = ExtResource( 5 )
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2608, -205 )
-NEXT_LEVEL = "res://Levels/Level_3.tscn"
+NEXT_LEVEL = "res://Levels/F2/Level_4.tscn"
 
 [node name="platform" type="KinematicBody2D" parent="."]
 position = Vector2( 385, 97 )
