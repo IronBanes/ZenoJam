@@ -23,7 +23,7 @@ export var wait_timer = 10
 var wait = wait_timer
 var current_move_time = 0
 
-var Player = load("res://Player.tscn")
+var Player = Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():# Replace with function body.
@@ -74,7 +74,15 @@ func hurt():
 
 func die():
 	state_machine.travel("die")
+	set_process(false)
+	$Timer.start()
 
-func _on_HitBox_Area2D_body_entered(body):
+
+func _on_Timer_timeout():
+	queue_free()
+
+
+func _on_Hitbox_body_entered(body):
 	if body is Player:
 		body.takedamage(damage)
+

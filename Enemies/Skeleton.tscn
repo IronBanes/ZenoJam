@@ -266,7 +266,6 @@ switch_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
 switch_mode = 2
@@ -311,7 +310,7 @@ states/unsheath/node = SubResource( 14 )
 states/unsheath/position = Vector2( 411, 165 )
 transitions = [ "idle", "unsheath", SubResource( 15 ), "idle", "unarmed_walk", SubResource( 16 ), "unsheath", "armed_walk", SubResource( 17 ), "armed_walk", "skel_attack", SubResource( 18 ), "skel_attack", "armed_walk", SubResource( 19 ), "armed_walk", "unsheath", SubResource( 20 ), "unsheath", "idle", SubResource( 21 ), "unarmed_walk", "idle", SubResource( 22 ), "unsheath", "hurt", SubResource( 23 ), "armed_walk", "hurt", SubResource( 24 ), "skel_attack", "hurt", SubResource( 25 ), "hurt", "skel_attack", SubResource( 26 ), "hurt", "armed_walk", SubResource( 27 ), "hurt", "unsheath", SubResource( 28 ), "unarmed_walk", "die", SubResource( 34 ), "idle", "die", SubResource( 35 ), "unsheath", "die", SubResource( 36 ), "hurt", "die", SubResource( 37 ), "armed_walk", "die", SubResource( 38 ), "skel_attack", "die", SubResource( 39 ) ]
 start_node = "unarmed_walk"
-graph_offset = Vector2( -94, 41 )
+graph_offset = Vector2( 175, 81 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=30]
 
@@ -329,7 +328,7 @@ position = Vector2( 0, -21 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
-frame = 11
+frame = 3
 
 [node name="HitBox" type="Area2D" parent="Sprite"]
 position = Vector2( 0, 21 )
@@ -373,3 +372,9 @@ cast_to = Vector2( 200, 0 )
 [node name="attackray" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 15, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="Sprite/HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
