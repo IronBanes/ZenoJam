@@ -118,7 +118,7 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=16]
 states/die/node = SubResource( 8 )
-states/die/position = Vector2( 808, 94 )
+states/die/position = Vector2( 808, 93 )
 states/idle/node = SubResource( 18 )
 states/idle/position = Vector2( 458, 21 )
 states/jump/node = SubResource( 11 )
@@ -128,7 +128,7 @@ states/take_hit/position = Vector2( 520, 226 )
 transitions = [ "take_hit", "jump", SubResource( 13 ), "jump", "take_hit", SubResource( 14 ), "jump", "die", SubResource( 15 ), "idle", "jump", SubResource( 19 ), "idle", "die", SubResource( 20 ), "idle", "take_hit", SubResource( 21 ), "take_hit", "idle", SubResource( 22 ), "jump", "idle", SubResource( 23 ) ]
 start_node = "idle"
 end_node = "die"
-graph_offset = Vector2( 195, 32 )
+graph_offset = Vector2( 122, -10 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 

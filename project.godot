@@ -15,13 +15,25 @@ _global_script_classes=[ {
 "path": "res://Scripts/Actor.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "FireSlime",
+"language": "GDScript",
+"path": "res://Enemies/FireSlime.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Skeley",
+"language": "GDScript",
+"path": "res://Enemies/Skeleton.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
-"Player": ""
+"FireSlime": "",
+"Player": "",
+"Skeley": ""
 }
 
 [application]

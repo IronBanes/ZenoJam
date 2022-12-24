@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Enemies/Skeleton.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Skeleton.gd" type="Script" id=2]
@@ -223,6 +223,9 @@ tracks/0/keys = {
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "armed_walk"
 
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "die"
+
 [sub_resource type="AnimationNodeAnimation" id=12]
 animation = "take hit"
 
@@ -275,13 +278,27 @@ auto_advance = true
 advance_condition = "IsArmedWalking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
-switch_mode = 1
+switch_mode = 2
 auto_advance = true
 advance_condition = "IsUnsheathing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
 
 [sub_resource type="AnimationNodeStateMachine" id=29]
 states/armed_walk/node = SubResource( 9 )
 states/armed_walk/position = Vector2( 629, 165 )
+states/die/node = SubResource( 33 )
+states/die/position = Vector2( 1001, 132 )
 states/hurt/node = SubResource( 12 )
 states/hurt/position = Vector2( 411, 269 )
 states/idle/node = SubResource( 10 )
@@ -292,9 +309,9 @@ states/unarmed_walk/node = SubResource( 13 )
 states/unarmed_walk/position = Vector2( 629, 67 )
 states/unsheath/node = SubResource( 14 )
 states/unsheath/position = Vector2( 411, 165 )
-transitions = [ "idle", "unsheath", SubResource( 15 ), "idle", "unarmed_walk", SubResource( 16 ), "unsheath", "armed_walk", SubResource( 17 ), "armed_walk", "skel_attack", SubResource( 18 ), "skel_attack", "armed_walk", SubResource( 19 ), "armed_walk", "unsheath", SubResource( 20 ), "unsheath", "idle", SubResource( 21 ), "unarmed_walk", "idle", SubResource( 22 ), "unsheath", "hurt", SubResource( 23 ), "armed_walk", "hurt", SubResource( 24 ), "skel_attack", "hurt", SubResource( 25 ), "hurt", "skel_attack", SubResource( 26 ), "hurt", "armed_walk", SubResource( 27 ), "hurt", "unsheath", SubResource( 28 ) ]
+transitions = [ "idle", "unsheath", SubResource( 15 ), "idle", "unarmed_walk", SubResource( 16 ), "unsheath", "armed_walk", SubResource( 17 ), "armed_walk", "skel_attack", SubResource( 18 ), "skel_attack", "armed_walk", SubResource( 19 ), "armed_walk", "unsheath", SubResource( 20 ), "unsheath", "idle", SubResource( 21 ), "unarmed_walk", "idle", SubResource( 22 ), "unsheath", "hurt", SubResource( 23 ), "armed_walk", "hurt", SubResource( 24 ), "skel_attack", "hurt", SubResource( 25 ), "hurt", "skel_attack", SubResource( 26 ), "hurt", "armed_walk", SubResource( 27 ), "hurt", "unsheath", SubResource( 28 ), "unarmed_walk", "die", SubResource( 34 ), "idle", "die", SubResource( 35 ), "unsheath", "die", SubResource( 36 ), "hurt", "die", SubResource( 37 ), "armed_walk", "die", SubResource( 38 ), "skel_attack", "die", SubResource( 39 ) ]
 start_node = "unarmed_walk"
-graph_offset = Vector2( -16, 41 )
+graph_offset = Vector2( -94, 41 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=30]
 
@@ -312,7 +329,7 @@ position = Vector2( 0, -21 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
-frame = 9
+frame = 11
 
 [node name="HitBox" type="Area2D" parent="Sprite"]
 position = Vector2( 0, 21 )

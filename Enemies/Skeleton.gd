@@ -1,3 +1,4 @@
+class_name Skeley
 extends KinematicBody2D
 
 
@@ -9,6 +10,10 @@ export var direction = -1
 export var speed = 25
 var state_machine 
 
+export (int) var hp = 100
+export (int) var damage = 10
+
+var Player = load("res://Player.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():# Replace with function body.
@@ -30,21 +35,49 @@ func _process(delta):
 	if $player_checker.is_colliding() && $floor_checker.is_colliding() && !$attackray.is_colliding():
 		state_machine.travel("armed_walk")
 		velocity.x = speed * direction
+		
+		$AnimationTree["parameters/conditions/IsArmedWalking"] = true
+		$AnimationTree["parameters/conditions/IsAttacking"] = false
+		
 	if !$player_checker.is_colliding() && $floor_checker.is_colliding() && !$attackray.is_colliding():
 		state_machine.travel("unarmed_walk")
 		velocity.x = speed * direction
+		
+		$AnimationTree["parameters/conditions/IsArmedWalking"] = false
+		$AnimationTree["parameters/conditions/IsAttacking"] = false
+		
 	if $attackray.is_colliding():
 		velocity.x = 0 * direction
 		state_machine.travel("skel_attack")
+		
+		$AnimationTree["parameters/conditions/IsArmedWalking"] = false
+		$AnimationTree["parameters/conditions/IsAttacking"] = true
+		
 		
 
 	
 	velocity.y += 20
 	velocity = move_and_slide(velocity, Vector2.UP)
 
+func takedamage(damage: int):
+	hp -= damage
+	if hp > 0:
+		hurt()
+	else:
+		die()
 
 func hurt():
 	state_machine.travel("hurt")
+	velocity.x = 0
+
+	if $AnimationTree.get("parameters/conditions/IsArmedWalking"):
+		state_machine.travel("armed_walk")
+	if $AnimationTree.get("parameters/conditions/IsAttacking"):
+		state_machine.travel("skel_attack")
 
 func die():
 	state_machine.travel("die")
+
+func _on_HitBox_Area2D_body_entered(body):
+	if body is Player:
+		body.takedamage(damage)

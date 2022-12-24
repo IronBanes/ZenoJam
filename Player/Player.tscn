@@ -3278,7 +3278,7 @@ graph_offset = Vector2( -225.906, -37.7831 )
 collision_mask = 16
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 8 )
 shape = SubResource( 1 )
 
@@ -3287,7 +3287,6 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 2
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -3366,4 +3365,4 @@ active = true
 parameters/playback = SubResource( 98 )
 parameters/conditions/Landed = true
 
-[connection signal="area_entered" from="Sprite/HitBox_Area2D" to="." method="_on_HitBox_Area2D_area_entered"]
+[connection signal="body_entered" from="Sprite/HitBox_Area2D" to="." method="_on_HitBox_Area2D_body_entered"]

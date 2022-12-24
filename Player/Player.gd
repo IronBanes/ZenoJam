@@ -5,6 +5,9 @@ export (int) var speed = 150
 export (int) var jump_speed = -275
 export (int) var gravity = 380
 
+
+export (int) var hp = 100
+
 export (float, 0, 1.0) var friction = 0.9
 export (float, 0, 1.0) var acceleration = 0.25
 
@@ -15,6 +18,8 @@ var state_machine
 var attacks = ["Sword Slash", "Sword Slash Down"]
 
 var sworddrawn = false
+export (int) var sword_attack_damage = 20
+export (int) var melee_attack_damage = 10
 
 
 
@@ -125,6 +130,12 @@ func _physics_process(delta):
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
+func takedamage(damage: int):
+	hp -= damage
+	if hp > 0:
+		hurt()
+	else:
+		die()
 
 func hurt():
 	state_machine.travel("hurt")
@@ -133,7 +144,9 @@ func die():
 	state_machine.travel("die")
 	set_physics_process(false)
 
-
-func _on_HitBox_Area2D_area_entered(area):
-	if area.is_in_group("enemyhurtbox"):
-		area.take_damage();
+func _on_HitBox_Area2D_body_entered(body):
+	if body is Skeley||FireSlime:
+		if sworddrawn:
+			body.takedamage(sword_attack_damage)
+		elif !sworddrawn:
+			body.takedamage(melee_attack_damage)

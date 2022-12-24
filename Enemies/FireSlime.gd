@@ -1,9 +1,15 @@
+class_name FireSlime
 extends KinematicBody2D
+
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
+export (int) var hp = 100
+export (int) var damage = 10
+
 var velocity = Vector2()
 export var direction = -1
 export var speed = 25
@@ -16,6 +22,8 @@ export var move_time_interval = 0.1
 export var wait_timer = 10
 var wait = wait_timer
 var current_move_time = 0
+
+var Player = load("res://Player.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():# Replace with function body.
@@ -47,15 +55,26 @@ func _process(delta):
 			
 		else:
 			wait -= 0.1
-			print(wait)
 		
 		
 
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 
+
+func takedamage(damage: int):
+	hp -= damage
+	if hp > 0:
+		hurt()
+	else:
+		die()
+
 func hurt():
 	state_machine.travel("hurt")
 
 func die():
 	state_machine.travel("die")
+
+func _on_HitBox_Area2D_body_entered(body):
+	if body is Player:
+		body.takedamage(damage)
