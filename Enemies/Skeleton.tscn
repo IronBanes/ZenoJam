@@ -201,7 +201,8 @@ states/unarmed_walk/position = Vector2( 629, 67 )
 states/unsheath/node = SubResource( 14 )
 states/unsheath/position = Vector2( 411, 165 )
 transitions = [ "idle", "unsheath", SubResource( 15 ), "idle", "unarmed_walk", SubResource( 16 ), "unsheath", "armed_walk", SubResource( 17 ), "armed_walk", "skel_attack", SubResource( 18 ), "skel_attack", "armed_walk", SubResource( 19 ), "armed_walk", "unsheath", SubResource( 20 ), "unsheath", "idle", SubResource( 21 ), "unarmed_walk", "idle", SubResource( 22 ), "unsheath", "take hit", SubResource( 23 ), "armed_walk", "take hit", SubResource( 24 ), "skel_attack", "take hit", SubResource( 25 ), "take hit", "skel_attack", SubResource( 26 ), "take hit", "armed_walk", SubResource( 27 ), "take hit", "unsheath", SubResource( 28 ) ]
-graph_offset = Vector2( -32, 21 )
+start_node = "unarmed_walk"
+graph_offset = Vector2( -16, 41 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=30]
 
@@ -222,7 +223,7 @@ position = Vector2( 0, -21 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
-frame = 7
+frame = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 8 )
@@ -258,4 +259,9 @@ cast_to = Vector2( 0, 20 )
 collision_mask = 4
 
 [node name="player_checker" type="RayCast2D" parent="."]
+enabled = true
 cast_to = Vector2( 200, 0 )
+
+[node name="attackray" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 21, 0 )
