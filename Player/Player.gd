@@ -132,3 +132,8 @@ func hurt():
 func die():
 	state_machine.travel("die")
 	set_physics_process(false)
+
+
+func _on_HitBox_Area2D_area_entered(area):
+	if area.is_in_group("enemyhurtbox"):
+		area.take_damage();

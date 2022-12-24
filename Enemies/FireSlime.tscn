@@ -83,12 +83,13 @@ animation = "jump"
 [sub_resource type="AnimationNodeTimeScale" id=10]
 
 [sub_resource type="AnimationNodeBlendTree" id=11]
+graph_offset = Vector2( -47, 43 )
 nodes/Animation/node = SubResource( 9 )
 nodes/Animation/position = Vector2( 140, 80 )
 "nodes/Jump Speed/node" = SubResource( 10 )
-"nodes/Jump Speed/position" = Vector2( 440, 80 )
+"nodes/Jump Speed/position" = Vector2( 460, 80 )
 nodes/output/position = Vector2( 960, 140 )
-node_connections = [ "Jump Speed", 0, "Animation", "output", 0, "Jump Speed" ]
+node_connections = [ "output", 0, "Jump Speed", "Jump Speed", 0, "Animation" ]
 
 [sub_resource type="AnimationNodeAnimation" id=12]
 animation = "take_hit"
@@ -127,7 +128,7 @@ states/take_hit/position = Vector2( 520, 226 )
 transitions = [ "take_hit", "jump", SubResource( 13 ), "jump", "take_hit", SubResource( 14 ), "jump", "die", SubResource( 15 ), "idle", "jump", SubResource( 19 ), "idle", "die", SubResource( 20 ), "idle", "take_hit", SubResource( 21 ), "take_hit", "idle", SubResource( 22 ), "jump", "idle", SubResource( 23 ) ]
 start_node = "idle"
 end_node = "die"
-graph_offset = Vector2( 278, 17 )
+graph_offset = Vector2( 195, 32 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 

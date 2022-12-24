@@ -19,7 +19,7 @@ limit_left = 0
 limit_bottom = 160
 
 [node name="Skeleton" parent="." instance=ExtResource( 4 )]
-position = Vector2( 725, -32 )
+position = Vector2( 457, 64 )
 collision_layer = 6
 collision_mask = 12
 
@@ -29,9 +29,8 @@ collision_layer = 6
 collision_mask = 12
 
 [node name="FireSlim" parent="." instance=ExtResource( 3 )]
-position = Vector2( 394, 61 )
+position = Vector2( 735, -30 )
 speed = 43
-jump_height = 10.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )

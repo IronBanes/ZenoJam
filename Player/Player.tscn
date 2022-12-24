@@ -3304,7 +3304,7 @@ __meta__ = {
 [node name="HitBox_Area2D" type="Area2D" parent="Sprite"]
 position = Vector2( 0, 8 )
 collision_layer = 8
-collision_mask = 2
+collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/HitBox_Area2D"]
 position = Vector2( 2, 10 )
@@ -3365,3 +3365,5 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 98 )
 parameters/conditions/Landed = true
+
+[connection signal="area_entered" from="Sprite/HitBox_Area2D" to="." method="_on_HitBox_Area2D_area_entered"]
