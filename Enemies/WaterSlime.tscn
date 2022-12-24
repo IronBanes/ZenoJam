@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Enemies/fSlime.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/wslime.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 7 )
@@ -64,7 +64,7 @@ start_node = "fsjump"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
-[node name="FireSlime" type="KinematicBody2D"]
+[node name="WaterSlime" type="KinematicBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -75,7 +75,6 @@ scale = Vector2( 0.421875, 0.484375 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 2
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
