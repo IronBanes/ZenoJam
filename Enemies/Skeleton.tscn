@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Enemies/Skeleton.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Skeleton.gd" type="Script" id=2]
@@ -74,6 +74,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 6, 7 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "die"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 12, 13 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -170,7 +186,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.25, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3, 5, 5, 5, 3 ]
+"values": [ 3, 5, 5, 10, 3 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -296,7 +312,7 @@ position = Vector2( 0, -21 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
-frame = 8
+frame = 1
 
 [node name="HitBox" type="Area2D" parent="Sprite"]
 position = Vector2( 0, 21 )
@@ -304,13 +320,14 @@ collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/HitBox"]
 position = Vector2( 6, -4 )
-rotation = 9.33562
+rotation = 9.33563
 shape = SubResource( 31 )
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 8 )
 anims/armed_walk = SubResource( 2 )
+anims/die = SubResource( 32 )
 anims/idle = SubResource( 3 )
 anims/skel_attack = SubResource( 4 )
 "anims/take hit" = SubResource( 5 )
