@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Skeley",
 "language": "GDScript",
 "path": "res://Enemies/Skeleton.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "WaterSlime",
+"language": "GDScript",
+"path": "res://Enemies/WaterSlime.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "FireSlime": "",
 "Player": "",
-"Skeley": ""
+"Skeley": "",
+"WaterSlime": ""
 }
 
 [application]

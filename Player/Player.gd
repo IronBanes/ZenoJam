@@ -135,7 +135,7 @@ func takedamage(damage: int):
 	print(hp)
 	if hp > 0:
 		hurt()
-	else:
+	elif hp == 0:
 		die()
 
 func hurt():
@@ -144,10 +144,17 @@ func hurt():
 func die():
 	state_machine.travel("die")
 	set_physics_process(false)
-
+	set_process(false)
+	$Timer.start()
+	
+func _on_Timer_timeout():
+	queue_free()
+	
 func _on_HitBox_Area2D_body_entered(body):
-	if body is Skeley||FireSlime:
+	if body.name == "Skeley"||"FireSlime":
 		if sworddrawn:
 			body.takedamage(sword_attack_damage)
 		elif !sworddrawn:
 			body.takedamage(melee_attack_damage)
+
+

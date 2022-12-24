@@ -143,7 +143,7 @@ nodes/Animation/position = Vector2( 140, 80 )
 "nodes/Jump Speed/node" = SubResource( 10 )
 "nodes/Jump Speed/position" = Vector2( 460, 80 )
 nodes/output/position = Vector2( 960, 140 )
-node_connections = [ "output", 0, "Jump Speed", "Jump Speed", 0, "Animation" ]
+node_connections = [ "Jump Speed", 0, "Animation", "output", 0, "Jump Speed" ]
 
 [sub_resource type="AnimationNodeAnimation" id=12]
 animation = "take_hit"

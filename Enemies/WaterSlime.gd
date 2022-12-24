@@ -1,4 +1,4 @@
-class_name FireSlime
+class_name WaterSlime
 extends KinematicBody2D
 
 
@@ -23,6 +23,7 @@ export var wait_timer = 10
 var wait = wait_timer
 var current_move_time = 0
 
+var Player = Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():# Replace with function body.
@@ -61,8 +62,8 @@ func _process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
-func takedamage(damage: int):
-	hp -= damage
+func takedamage(incdamage: int):
+	hp -= incdamage
 	if hp > 0:
 		hurt()
 	else:
@@ -82,6 +83,6 @@ func _on_Timer_timeout():
 
 
 func _on_Hitbox_body_entered(body):
-	if body.name == "Player":
+	if body is Player:
 		body.takedamage(damage)
 

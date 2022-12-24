@@ -13,7 +13,6 @@ var canattack = true
 export (int) var hp = 100
 export (int) var damage = 10
 
-var Player = Player
 
 export var attack_cooldown_time = 1000
 export var next_attack_time = 0
@@ -99,5 +98,5 @@ func _on_Timer_timeout():
 
 
 func _on_HitBox_body_entered(body):
-	if body is Player:
+	if body.name == "Player":
 		body.takedamage(damage)
