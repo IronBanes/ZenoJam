@@ -1,5 +1,16 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GradientTexture" id=1]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="bar" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureProgress" type="TextureProgress" parent="bar"]
+margin_right = 2048.0
+margin_bottom = 40.0
+texture_under = SubResource( 1 )

@@ -49,6 +49,7 @@ func _process(delta):
 	
 	elif current_move_time < max_move_time:
 		velocity.x = lerp(velocity.x, 0, 0.1)
+		velocity.y = 20
 		if wait <= 0: 
 			current_move_time += move_time_interval
 			

@@ -7,7 +7,7 @@
 extents = Vector2( 8, 7 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 8, 7 )
+extents = Vector2( 9, 7.5 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "die"
@@ -146,6 +146,7 @@ shape = SubResource( 1 )
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -0.5 )
 shape = SubResource( 24 )
 
 [node name="Sprite" type="Sprite" parent="."]
