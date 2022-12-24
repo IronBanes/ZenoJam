@@ -13,7 +13,7 @@ height = 29.9987
 [sub_resource type="Animation" id=51]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("HitBox_Area2D/CollisionShape2D2:disabled")
+tracks/0/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:radius")
+tracks/1/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "values": [ 11.1073 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:height")
+tracks/2/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -49,7 +49,7 @@ tracks/2/keys = {
 "values": [ 29.9987 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HitBox_Area2D/CollisionShape2D2:position")
+tracks/3/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -61,7 +61,7 @@ tracks/3/keys = {
 "values": [ Vector2( 2, 10 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HitBox_Area2D/CollisionShape2D2:rotation_degrees")
+tracks/4/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -73,7 +73,7 @@ tracks/4/keys = {
 "values": [ -90.4111 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HitBox_Area2D/CollisionShape2D2:scale")
+tracks/5/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -85,7 +85,7 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape")
+tracks/6/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -97,7 +97,7 @@ tracks/6/keys = {
 "values": [ SubResource( 50 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:a")
+tracks/7/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -109,7 +109,7 @@ tracks/7/keys = {
 "values": [ Vector2( -9.87058, -18.0713 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:b")
+tracks/8/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:b")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -504,7 +504,7 @@ tracks/4/keys = {
 "values": [ 42.0, 43.0, 44.0, 45.0, 46.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HitBox_Area2D/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -516,7 +516,7 @@ tracks/5/keys = {
 "values": [ true, false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape")
+tracks/6/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -528,7 +528,7 @@ tracks/6/keys = {
 "values": [ SubResource( 50 ), SubResource( 50 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("HitBox_Area2D/CollisionShape2D2:position")
+tracks/7/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -540,7 +540,7 @@ tracks/7/keys = {
 "values": [ Vector2( 11, 3 ), Vector2( 10, -7 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("HitBox_Area2D/CollisionShape2D2:rotation_degrees")
+tracks/8/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:rotation_degrees")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -552,7 +552,7 @@ tracks/8/keys = {
 "values": [ -90.4111, -90.4111 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:radius")
+tracks/9/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:radius")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -564,7 +564,7 @@ tracks/9/keys = {
 "values": [ 16.0139, 5.02857 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:height")
+tracks/10/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:height")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -639,7 +639,7 @@ tracks/4/keys = {
 "values": [ 47.0, 48.0, 49.0, 50.0, 51.0, 52.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HitBox_Area2D/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -651,7 +651,7 @@ tracks/5/keys = {
 "values": [ true, false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HitBox_Area2D/CollisionShape2D2:position")
+tracks/6/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -663,7 +663,7 @@ tracks/6/keys = {
 "values": [ Vector2( 6, 8 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("HitBox_Area2D/CollisionShape2D2:rotation_degrees")
+tracks/7/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -675,7 +675,7 @@ tracks/7/keys = {
 "values": [ -90.4111 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("HitBox_Area2D/CollisionShape2D2:scale")
+tracks/8/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -687,7 +687,7 @@ tracks/8/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape")
+tracks/9/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -699,7 +699,7 @@ tracks/9/keys = {
 "values": [ SubResource( 50 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:height")
+tracks/10/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:height")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -711,7 +711,7 @@ tracks/10/keys = {
 "values": [ 5.98565 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:radius")
+tracks/11/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:radius")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -790,7 +790,7 @@ tracks/4/keys = {
 "values": [ 53.0, 54.0, 55.0, 56.0, 57.0, 58.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HitBox_Area2D/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -802,7 +802,7 @@ tracks/5/keys = {
 "values": [ true, false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:radius")
+tracks/6/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:radius")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -814,7 +814,7 @@ tracks/6/keys = {
 "values": [ 10.0213 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:height")
+tracks/7/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:height")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -826,7 +826,7 @@ tracks/7/keys = {
 "values": [ 29.9562 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("HitBox_Area2D/CollisionShape2D2:position")
+tracks/8/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -838,7 +838,7 @@ tracks/8/keys = {
 "values": [ Vector2( 3, 11 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("HitBox_Area2D/CollisionShape2D2:rotation_degrees")
+tracks/9/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -850,7 +850,7 @@ tracks/9/keys = {
 "values": [ -90.4111 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape")
+tracks/10/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -1951,7 +1951,7 @@ tracks/4/keys = {
 "values": [ 123.0, 124.0, 125.0, 126.0, 127.0, 128.0, 129.0, 130.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HitBox_Area2D/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1963,7 +1963,7 @@ tracks/5/keys = {
 "values": [ true, false, true, false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape")
+tracks/6/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1975,7 +1975,7 @@ tracks/6/keys = {
 "values": [ SubResource( 52 ), SubResource( 52 ), SubResource( 52 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("HitBox_Area2D/CollisionShape2D2:position")
+tracks/7/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1987,7 +1987,7 @@ tracks/7/keys = {
 "values": [ Vector2( 21, 11 ), Vector2( 20, 13 ), Vector2( 21, 11 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("HitBox_Area2D/CollisionShape2D2:rotation_degrees")
+tracks/8/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:rotation_degrees")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1999,7 +1999,7 @@ tracks/8/keys = {
 "values": [ -90.4111, -90.4111, -90.4111 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:a")
+tracks/9/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:a")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -2011,7 +2011,7 @@ tracks/9/keys = {
 "values": [ Vector2( -10.8706, -18.0785 ), Vector2( 1.03585, -4.9927 ), Vector2( -7.84193, -22.0568 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:b")
+tracks/10/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:b")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -2023,7 +2023,7 @@ tracks/10/keys = {
 "values": [ Vector2( 8.99259, 1.06455 ), Vector2( 7.99262, 1.05738 ), Vector2( 0.992798, 1.00715 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("HitBox_Area2D/CollisionShape2D2:scale")
+tracks/11/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -2226,7 +2226,7 @@ tracks/4/keys = {
 "values": [ 103.0, 104.0, 105.0, 106.0, 107.0, 108.0, 109.0, 110.0, 111.0, 112.0, 113.0, 114.0, 115.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HitBox_Area2D/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2238,7 +2238,7 @@ tracks/5/keys = {
 "values": [ true, false, true, false, true, false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape")
+tracks/6/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2250,7 +2250,7 @@ tracks/6/keys = {
 "values": [ SubResource( 50 ), SubResource( 50 ), SubResource( 50 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("HitBox_Area2D/CollisionShape2D2:position")
+tracks/7/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2262,7 +2262,7 @@ tracks/7/keys = {
 "values": [ Vector2( 17, 11 ), Vector2( 17, 8 ), Vector2( 7, 8 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("HitBox_Area2D/CollisionShape2D2:rotation_degrees")
+tracks/8/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:rotation_degrees")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2400,7 +2400,7 @@ tracks/4/keys = {
 "values": [ 116.0, 117.0, 118.0, 119.0, 120.0, 121.0, 122.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:radius")
+tracks/5/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:radius")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2412,7 +2412,7 @@ tracks/5/keys = {
 "values": [ 2.38641 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:height")
+tracks/6/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:height")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2424,7 +2424,7 @@ tracks/6/keys = {
 "values": [ 21.7985 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("HitBox_Area2D/CollisionShape2D2:disabled")
+tracks/7/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2436,7 +2436,7 @@ tracks/7/keys = {
 "values": [ true, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("HitBox_Area2D/CollisionShape2D2:position")
+tracks/8/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2448,7 +2448,7 @@ tracks/8/keys = {
 "values": [ Vector2( 15, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("HitBox_Area2D/CollisionShape2D2:rotation_degrees")
+tracks/9/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -2460,7 +2460,7 @@ tracks/9/keys = {
 "values": [ -81.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape")
+tracks/10/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -2472,7 +2472,7 @@ tracks/10/keys = {
 "values": [ SubResource( 52 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:a")
+tracks/11/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:a")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -2484,7 +2484,7 @@ tracks/11/keys = {
 "values": [ Vector2( -7.9107, -17.9839 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("HitBox_Area2D/CollisionShape2D2:shape:b")
+tracks/12/path = NodePath("Sprite/HitBox_Area2D/CollisionShape2D2:shape:b")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -3275,6 +3275,7 @@ graph_offset = Vector2( -225.906, -37.7831 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=98]
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 16
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -3282,11 +3283,11 @@ position = Vector2( -1, 8 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3, -8 )
+position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 14
 vframes = 13
-frame = 1
+frame = 3
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -3299,6 +3300,17 @@ __meta__ = {
 "source": "res://Player/adventurer.aseprite"
 }
 }
+
+[node name="HitBox_Area2D" type="Area2D" parent="Sprite"]
+position = Vector2( 0, 8 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/HitBox_Area2D"]
+position = Vector2( 2, 10 )
+rotation = -1.57797
+shape = SubResource( 50 )
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 51 )
@@ -3346,14 +3358,6 @@ anims/wall-slide = SubResource( 49 )
 visible = false
 cast_to = Vector2( 0, 30 )
 collide_with_areas = true
-
-[node name="HitBox_Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox_Area2D"]
-position = Vector2( 2, 10 )
-rotation = -1.57797
-shape = SubResource( 50 )
-disabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 97 )

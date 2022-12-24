@@ -6,10 +6,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 14 )
 
+[sub_resource type="CircleShape2D" id=31]
+radius = 14.0
+
 [sub_resource type="Animation" id=8]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/0/path = NodePath("Sprite/HitBox/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,6 +22,42 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/HitBox/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6, -4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/HitBox/CollisionShape2D:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 534.892 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/HitBox/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -64,22 +103,58 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3, 4, 3 ]
+"values": [ 3, 4, 4, 3 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite/HitBox/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, true ]
+"values": [ true, false, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/HitBox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6, -4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/HitBox/CollisionShape2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 534.892 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/HitBox/CollisionShape2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -100,6 +175,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "unarmed_walk"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -131,14 +207,14 @@ tracks/0/keys = {
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "armed_walk"
 
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "take hit"
+
 [sub_resource type="AnimationNodeAnimation" id=10]
 animation = "idle"
 
 [sub_resource type="AnimationNodeAnimation" id=11]
 animation = "skel_attack"
-
-[sub_resource type="AnimationNodeAnimation" id=12]
-animation = "take hit"
 
 [sub_resource type="AnimationNodeAnimation" id=13]
 animation = "unarmed_walk"
@@ -190,24 +266,21 @@ advance_condition = "IsUnsheathing"
 [sub_resource type="AnimationNodeStateMachine" id=29]
 states/armed_walk/node = SubResource( 9 )
 states/armed_walk/position = Vector2( 629, 165 )
+states/hurt/node = SubResource( 12 )
+states/hurt/position = Vector2( 411, 269 )
 states/idle/node = SubResource( 10 )
 states/idle/position = Vector2( 411, 67 )
 states/skel_attack/node = SubResource( 11 )
 states/skel_attack/position = Vector2( 629, 269 )
-"states/take hit/node" = SubResource( 12 )
-"states/take hit/position" = Vector2( 411, 269 )
 states/unarmed_walk/node = SubResource( 13 )
 states/unarmed_walk/position = Vector2( 629, 67 )
 states/unsheath/node = SubResource( 14 )
 states/unsheath/position = Vector2( 411, 165 )
-transitions = [ "idle", "unsheath", SubResource( 15 ), "idle", "unarmed_walk", SubResource( 16 ), "unsheath", "armed_walk", SubResource( 17 ), "armed_walk", "skel_attack", SubResource( 18 ), "skel_attack", "armed_walk", SubResource( 19 ), "armed_walk", "unsheath", SubResource( 20 ), "unsheath", "idle", SubResource( 21 ), "unarmed_walk", "idle", SubResource( 22 ), "unsheath", "take hit", SubResource( 23 ), "armed_walk", "take hit", SubResource( 24 ), "skel_attack", "take hit", SubResource( 25 ), "take hit", "skel_attack", SubResource( 26 ), "take hit", "armed_walk", SubResource( 27 ), "take hit", "unsheath", SubResource( 28 ) ]
+transitions = [ "idle", "unsheath", SubResource( 15 ), "idle", "unarmed_walk", SubResource( 16 ), "unsheath", "armed_walk", SubResource( 17 ), "armed_walk", "skel_attack", SubResource( 18 ), "skel_attack", "armed_walk", SubResource( 19 ), "armed_walk", "unsheath", SubResource( 20 ), "unsheath", "idle", SubResource( 21 ), "unarmed_walk", "idle", SubResource( 22 ), "unsheath", "hurt", SubResource( 23 ), "armed_walk", "hurt", SubResource( 24 ), "skel_attack", "hurt", SubResource( 25 ), "hurt", "skel_attack", SubResource( 26 ), "hurt", "armed_walk", SubResource( 27 ), "hurt", "unsheath", SubResource( 28 ) ]
 start_node = "unarmed_walk"
 graph_offset = Vector2( -16, 41 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=30]
-
-[sub_resource type="SegmentShape2D" id=31]
-b = Vector2( -9.67657, 7.16687 )
 
 [node name="Skeleton" type="KinematicBody2D"]
 collision_layer = 2
@@ -223,7 +296,17 @@ position = Vector2( 0, -21 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
-frame = 9
+frame = 8
+
+[node name="HitBox" type="Area2D" parent="Sprite"]
+position = Vector2( 0, 21 )
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/HitBox"]
+position = Vector2( 6, -4 )
+rotation = 9.33562
+shape = SubResource( 31 )
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 8 )
@@ -244,15 +327,6 @@ parameters/conditions/IsArmedWalking = false
 parameters/conditions/IsAttacking = false
 parameters/conditions/IsUnsheathing = false
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 6, -4 )
-rotation = 9.33562
-shape = SubResource( 31 )
-disabled = true
-
 [node name="floor_checker" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 0, 20 )
@@ -264,4 +338,4 @@ cast_to = Vector2( 200, 0 )
 
 [node name="attackray" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 21, 0 )
+cast_to = Vector2( 15, 0 )
